@@ -2,12 +2,12 @@
 import * as React from 'react';
 import {Button} from "./Button";
 import {useState} from "react";
-import s from './Todolist.module.css'
+import s from './Counter.module.css'
 
 type Props = {
 
 };
-export const Todolist = (props: Props) => {
+export const Counter = (props: Props) => {
     const[count, setCount] = useState(0)
     const onClickInk = () => {
         setCount(count + 1);

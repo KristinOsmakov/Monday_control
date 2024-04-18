@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import {Todolist} from "./Todolist";
+import {Counter} from "./Counter";
 
 
 function App() {
   return (
     <div >
-        <Todolist />
+        <Counter />
     </div>
   );
 }
