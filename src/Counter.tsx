@@ -2,26 +2,46 @@
 import * as React from 'react';
 import {Button} from "./Button";
 import {useState} from "react";
-import s from './Counter.module.css'
+import s from './Counter.module.css';
+import imgS from './1673513966_flomaster-club-p-yeralash-risunok-pinterest-1-removebg-preview.png'
+
 
 type Props = {
 
 };
 export const Counter = (props: Props) => {
-    const[count, setCount] = useState(0)
+
+    const min = 0;
+    const max = 5;
+    const step = 1;
+
+    const[count, setCount] = useState(min)
+    const isCounterMax = count ===  max;
+    const isCounterMin = count === min;
     const onClickInk = () => {
-        setCount(count + 1);
+        if (count < max) {
+            setCount(count + step);
+        }
+        return count;
     }
     const onClickReset = () => {
-        setCount(0);
+        setCount(min);
     }
 
     return (
-        <div className={s.container}>
-            <div className={ count >= 5 ? s.countResultMax : s.containerCountResult }>{count}</div>
-            <div className={s.buttonContainer}>
-                <Button title={"inc"} onClick={onClickInk} disabled={count >= 5} className={count >= 5 ? s.newButton : s.button}/>
-                <Button title={"reset"} onClick={onClickReset} disabled={count <= 0} className={count <= 0 ? s.newButton : s.button}/>
+        <div>
+            <div className={s.containerImg}>
+                <img className={isCounterMax ? s.imgRes : s.img} src={imgS}/>
+            </div>
+            <div className={s.container}>
+                <div className={isCounterMax ? s.countResultMax : s.containerCountResult}>{count}</div>
+                <progress className={s.progress} value={count} max={max}></progress>
+                <div className={s.buttonContainer}>
+                    <Button title={"inc"} onClick={onClickInk} disabled={isCounterMax}
+                            className={isCounterMax ? s.newButton : s.button}/>
+                    <Button title={"reset"} onClick={onClickReset} disabled={isCounterMin}
+                            className={isCounterMin ? s.newButton : s.button}/>
+                </div>
             </div>
         </div>
     );

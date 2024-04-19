@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 140px;
     width: 330px;
     background-color: #61dafb;
     border-radius: 10px;
@@ -33,7 +33,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 140px;
     width: 330px;
     background-color: #61dafb;
     border-radius: 10px;
@@ -47,7 +47,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 120px;
+    height: 100px;
     width: 320px;
     border: 5px solid #61dafb;
     border-radius: 10px;
@@ -66,4 +66,32 @@ body {
     border-radius: 10px;
     background-color: #708090;
     color: black;
+}
+.progress {
+    width: 320px;
+}
+
+.img {
+    height: 320px;
+    width: 370px;
+    border-radius: 10px;
+    position: absolute;
+    top: -120px;
+    right: 300px;
+    transition: 1.5s;
+    opacity: 0;
+
+}
+.imgRes {
+    height: 320px;
+    width: 370px;
+    border-radius: 10px;
+    position: absolute;
+    top: -120px;
+    right: 0px;
+    transition: 1.5s;
+    opacity: 1;
+}
+.containerImg {
+    position: relative;
 }
